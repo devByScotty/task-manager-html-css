@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+
+        <div id="error-message" style="color: red; display: none;"></div>
+
+
+        
+       
+
+        <section class="home hidden">
+            <header class="header">
+                <h2>Welcome to Your Task Manager</h2>
+            </header>
+            <div class="home-content">
+                <p>Manage your tasks efficiently with our easy-to-use interface.</p>
+                <p>Switch between Task Schedule and Task Manager to stay organized.</p>
+                <p>Get started by adding your first task!</p>
+            </div>
+        
+           
+        </section>
+
+        <!-- Task Overview Section -->
+        <section class="task-overview hidden">
+            <header class="header">
+                <img src="profile.jpg" alt="User" class="profile-pic" aria-label="User profile picture">
+                <h2>Manage your tasks</h2>
+            </header>
+            <div class="status-cards">
+                <div class="status-card">
+                    <span>In Progress</span>
+                    <span class="number">3</span>
+                </div>
+                <div class="status-card">
+                    <span>In Review</span>
+                    <span class="number">8</span>
+                </div>
+            </div>
+            <div class="time-filter">
+                <button class="filter-btn">Day</button>
+                <button class="filter-btn active">Week</button>
+                <button class="filter-btn">Month</button>
+            </div>
+            <div class="chart">
+                <canvas id="taskChart" width="400" height="200"></canvas>
+            </div>
+        </section>
+
+        <!-- Calendar and Task Schedule Section -->
+        <section class="task-schedule hidden">
+            <header class="header">
+                <h2>Task Schedule</h2>
+                <div class="calendar-header">
+                    <input type="date" class="date-picker" aria-label="Select date">
+                    <button class="edit-btn" aria-label="Edit tasks">✏️</button>
+                </div>
+            </header>
+            <div class="calendar">
+                <div class="calendar-header">
+
+                    <span class="calendar-day">Sun</span>
+                    <span class="calendar-day"> Mon</span>
+                    <span class="calendar-day">Tue</span>
+                    <span class="calendar-day">Wed</span>
+                    <span class="calendar-day">Thu</span>
+                    <span class="calendar-day">Fri</span>
+                    <span class="calendar-day">Sat</span>
+                </div>
+                <div class="calendar-body">
+                    <!-- Days will be generated here -->
+                </div>
+            </div>
+            <div class="task-details">
+                <h3>Task List</h3>
+                <ul id="task-list">
+                    <!-- Task list items will be appended here -->
+                </ul>
+                <input type="text" id="new-task" placeholder="Enter a task description" aria-label="New task input" />
+                <button id="add-task-btn" aria-label="Add task">Add Task</button>
+                <button id="clear-task-btn" aria-label="Clear all tasks">Clear All</button>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <button id="home-btn" class="nav-btn" aria-label="Go to Home">
+                <i class="fas fa-home"></i> Home
+            </button>
+            <button id="task-schedule-btn" class="nav-btn" aria-label="Go to Task Schedule">
+                <i class="fas fa-calendar-alt"></i> Task Schedule
+            </button>
+            <button id="task-manager-btn" class="nav-btn" aria-label="Go to Task Manager">
+                <i class="fas fa-tasks"></i> Task Manager
+            </button>
+        </div>
+
+        
+    </main>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <canvas id="taskChart" width="400" height="200"></canvas>
+    <script src="script.js">
+      
+    </script>
+</body>
+
+</html>
